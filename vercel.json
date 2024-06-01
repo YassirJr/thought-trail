@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://thought-trail-server.vercel.app/api/$1"
+    }
+  ]
+}
