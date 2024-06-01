@@ -8,9 +8,9 @@ router.get('/',
     passport.authenticate('google', {scope: ['email','profile']}));
 
 router.get('/callback',
-    passport.authenticate('google', {failureRedirect: 'http://localhost:3000/auth'}),
+    passport.authenticate('google', {failureRedirect: process.env.CLIENT_URL+'/auth'}),
     (req, res) => {
-        res.redirect("http://localhost:3000/account/admin")
+        res.redirect(process.env.CLIENT_URL+"/account/admin")
     });
 
 

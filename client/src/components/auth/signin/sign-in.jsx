@@ -57,10 +57,10 @@ export default function SignIn({onLoad}) {
     }
 
     const handleGoogleAuth = () => {
-        window.open('http://localhost:5000/api/v1/oauth/google', '_self')
+        window.open(import.meta.env.VITE_BACKEND_URL + '/api/v1/oauth/google', '_self')
     }
     const handleGithubAuth = () => {
-        window.open('http://localhost:5000/api/v1/oauth/github', '_self')
+        window.open(import.meta.env.VITE_BACKEND_URL +'/api/v1/oauth/github', '_self')
     }
 
     useEffect(() => {

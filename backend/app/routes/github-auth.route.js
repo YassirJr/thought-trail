@@ -6,10 +6,10 @@ router.get('/', passport.authenticate('github' ,{prompt: 'select_account'})); //
 
 router.get(
     '/callback',
-    passport.authenticate('github', {failureRedirect: 'http://localhost:3000/auth'}),
+    passport.authenticate('github', {failureRedirect: process.env.CLIENT_URL + '/auth'}),
     function (req, res) {
         // Successful authentication, redirect home.
-        res.redirect("http://localhost:3000/account/admin")
+        res.redirect(process.env.CLIENT_URL + "/account/admin")
     }
 );
 module.exports = router;
@@ -21,3 +21,4 @@ module.exports = router;
 
 
 
+Î
